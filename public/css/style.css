@@ -55,8 +55,17 @@ h3 {
 
 #titel {
     margin-left: 20pt;
+    height: 220pt;
+    overflow: hidden;
 }
 
 #titel img {
     opacity: 0.6;
+    width: 100%;
+    height: auto;
+}
+
+#titel h1 {
+    position: absolute;
+    padding: 100px;
 }
