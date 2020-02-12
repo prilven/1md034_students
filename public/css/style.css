@@ -12,10 +12,11 @@ body {
 #select {
     color: white;
     background: black;
+    border: 1px dashed white;
 }
 
 #info {
-
+    border: 1px dashed black;
     
 }
 
@@ -35,4 +36,21 @@ table {
 
 section {
     margin: 20pt;
+    text-margin: 10pt;
+}
+
+p {
+    margin: 10pt;
+}
+
+h1 {
+    margin: 10pt;
+}
+
+h2 {
+    margin: 10pt;
+}
+
+h3 {
+    margin: 10pt;
 }
