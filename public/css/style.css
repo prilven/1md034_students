@@ -2,6 +2,7 @@
 body {
     font-family: helvetica, sans-serif;
     font-size: 18pt;
+    margin: 0 auto;
 }
 
 #allergy {
@@ -21,4 +22,11 @@ body {
 button:hover {
     background: #00ff00;
     cursor: pointer;
+}
+
+table {
+    width: 95%;
+    margin: 0 auto;
+
+    
 }
