@@ -1,4 +1,3 @@
-
 body {
     font-family: helvetica, sans-serif;
     font-size: 18pt;
@@ -35,8 +34,7 @@ table {
 }
 
 section {
-    margin: 20pt;
-    text-margin: 10pt;
+    margin-left: 20pt;
 }
 
 p {
@@ -53,4 +51,12 @@ h2 {
 
 h3 {
     margin: 10pt;
+}
+
+#titel {
+    margin-left: 20pt;
+}
+
+#titel img {
+    opacity: 0.6;
 }
