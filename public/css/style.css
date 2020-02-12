@@ -19,6 +19,10 @@ body {
     
 }
 
+button {
+    margin: 30pt;
+}
+
 button:hover {
     background: #00ff00;
     cursor: pointer;
@@ -27,6 +31,8 @@ button:hover {
 table {
     width: 95%;
     margin: 0 auto;
+}
 
-    
+section {
+    margin: 20pt;
 }
