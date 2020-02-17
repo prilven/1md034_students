@@ -18,8 +18,28 @@ let tastyBurger = new menuItem("Tasty Burger", 1200, "https://media-cdn.tripadci
 
 												let halloumiBurger = new menuItem("Halloumi Burger", 200, "https://images.ctfassets.net/qu53tdnhexvd/2cSAd70I9aOKiYeCswqE0K/d4a6118cd7ac072a3a28756e1bac7d3c/chorizo-_-halloumi-burgers.jpg?fm=jpg&fl=progressive&q=80&w=1300", (""));
 
-console.log(tastyBurger.info());
-console.log(cheeseBurger.info());
-console.log(avocadoBurger.info());
-console.log(turkeyBurger.info());
-console.log(halloumiBurger.info());
+let list1 = document.createElement('ul');
+let listitem1 = document.createElement('li');
+let listitem2 = document.createElement('li');
+let listitem3 = document.createElement('li');
+let listitem4 = document.createElement('li');
+let listitem5 = document.createElement('li');
+
+let burger1 = document.createTextNode(tastyBurger.info());
+let burger2 = document.createTextNode(cheeseBurger.info());
+let burger3 = document.createTextNode(avocadoBurger.info());
+let burger4 = document.createTextNode(turkeyBurger.info());
+let burger5 = document.createTextNode(halloumiBurger.info());
+
+listitem1.appendChild(burger1);
+listitem2.appendChild(burger2);
+listitem3.appendChild(burger3);
+listitem4.appendChild(burger4);
+listitem5.appendChild(burger5);
+list1.appendChild(listitem1);
+list1.appendChild(listitem2);
+list1.appendChild(listitem3);
+list1.appendChild(listitem4);
+list1.appendChild(listitem5);
+
+document.body.appendChild(list1);
