@@ -70,54 +70,9 @@ h3 {
     padding: 100px;
 }
 
-.selection {
+.wrapper {
     display: grid;
     grid-gap: 10px;
-}
-
-.tastyburger {
-    grid-column: 1;
-    grid-row: 1;
-}
-
-.tastypic {
-    grid-column: 1;
-    grid-row: 2;
-    margin-left: 10pt;
-}
-
-.tastyinfo {
-    grid-column: 1;
-    grid-row: 3;
-}
-
-.cheeseburger {
-    grid-column: 2;
-    grid-row: 1;
-}
-
-.cheesepic {
-    grid-column: 2;
-    grid-row: 2;
-}
-
-.cheeseinfo {
-    grid-column: 2;
-    grid-row: 3;
-}
-
-.avocadoburger {
-    grid-column: 3;
-    grid-row: 1;
-}
-
-.avocadopic {
-    grid-column: 3;
-    grid-row: 2;
-}
-
-.avocadoinfo {
-    grid-column: 3;
-    grid-row: 3;
+    grid-template-columns: 400px 400px 400px;
 }
 

@@ -10,7 +10,7 @@ function menuItem(name, kCal, image, lactose, gluten, vegan) {
     };
 }
 
-let tastyBurger = new menuItem("Tasty Burger", 1200, "https://media-cdn.tripadcisor.com/media/photo-p/0f/a3/0e/a0/the-big-tasty.jpg", 1, 1, 0);
+let tastyBurger = new menuItem("Tasty Burger", 1200, "https://media-cdn.tripadvisor.com/media/photo-p/0f/a3/0e/a0/the-big-tasty.jpg", 1, 1, 0);
 
 let cheeseBurger = new menuItem("Cheese Burger", 2400, "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F1dccdabc-7e12-4feb-aede-fe1407a73755%2Forig.jpg&quality=85&w=640&h=0&mode=auto&format=jpg&v=4", 1, 1, 0);
 
@@ -50,28 +50,54 @@ document.body.appendChild(list1);
 
 let menu = new Array(tastyBurger, cheeseBurger, avocadoBurger, turkeyBurger, halloumiBurger);
 
-let myElement = document.getElementById("myList")
+var myElement = document.getElementById('selection');
+
 for(let item of menu){
-	let listItem = document.createElement('li');
-	let listValue = document.createTextNode(item.info());
-  listItem.appendChild(listValue);
-  myElement.appendChild(listItem);
-  if(item.lactose){
-  	let listItem = document.createElement('p');
-    let listValue = document.createTextNode('Lactose');
+
+    let main = document.createElement('div');
+    
+    let heading = document.createElement('h2');
+    let headingValue = document.createTextNode(item.name);
+    heading.appendChild(headingValue);
+    
+    
+    let burgerImage = document.createElement('img')
+    burgerImage.src = item.image;
+    burgerImage.width = 350;
+    
+    
+    let list = document.createElement('ul');
+    let listItem = document.createElement('li');
+    let listValue = document.createTextNode(item.kCal + ' kCal');
     listItem.appendChild(listValue);
-    myElement.appendChild(listItem);
-  }
+    list.appendChild(listItem);
+    
+    if(item.lactose){
+	listItem = document.createElement('li');
+	boldItem = document.createElement('b');
+	listValue = document.createTextNode('Lactose');
+	boldItem.appendChild(listValue);
+	listItem.appendChild(boldItem);
+	list.appendChild(listItem);
+    }
     if(item.gluten){
-  	let listItem = document.createElement('p');
-    let listValue = document.createTextNode('Gluten');
-    listItem.appendChild(listValue);
-    myElement.appendChild(listItem);
+	listItem = document.createElement('li');
+	boldItem = document.createElement('b');
+	listValue = document.createTextNode('Gluten');
+	boldItem.appendChild(listValue);
+	listItem.appendChild(boldItem);
+	list.appendChild(listItem);
     }
-      if(item.vegan){
-  	let listItem = document.createElement('p');
-    let listValue = document.createTextNode('Vegan');
-    listItem.appendChild(listValue);
-    myElement.appendChild(listItem);
+    if(item.vegan){
+	listItem = document.createElement('li');
+	boldItem = document.createElement('b');
+	listValue = document.createTextNode('Vegan');
+	boldItem.appendChild(listValue);
+	listItem.appendChild(boldItem);
+	list.appendChild(listItem);
     }
+    main.appendChild(heading);
+    main.appendChild(burgerImage);
+    main.appendChild(list);
+    myElement.appendChild(main);
 }

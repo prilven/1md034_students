@@ -1,3 +1,4 @@
+/*
 const vm = new Vue( {
     el: '#myID',
     data: {
@@ -26,3 +27,4 @@ const vm = new Vue( {
     </li>
   </ul>
 </div>
+*/
