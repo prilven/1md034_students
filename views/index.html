@@ -3,6 +3,7 @@
 
   <head>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <script type="text/javascript" src="js/menu.js"></script>
     <script src="js/js_script.js" defer></script>
     <script src="js/vue_script.js" defer></script>
     <script src="https://vuejs.org/js/vue.js"></script>
@@ -22,9 +23,9 @@
 	<h2>Select Burger</h2>
 	<p>This is where you select your tasty burger.</p>
 	<div id="selection" class="wrapper">
-	  <div v-for="item in menu">
+	  <div v-for="item in food">
 	    <h2>{{item.name}}</h2>
-	    <img v-bind:src="item.image" width="350">
+	    <img v-bind:src="item.img" width="350">
 	    <ul>
 	      <li>{{item.kCal}} kCal</li>
 	      <li v-if="item.lactose"><b>Lactose</b></li>

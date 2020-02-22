@@ -2,7 +2,7 @@
 const vm = new Vue( {
     el: '#selection',
     data: {
-	menu: menu,
+	food: food,
     }
 })
 
