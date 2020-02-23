@@ -12,7 +12,7 @@
   </head>
 
   <body>
-    <main>
+    <main id="main">
 
       <header id="titel">
       <h1>Välkommen till TastiestBurgers Online</h1>
@@ -24,7 +24,7 @@
 	<p>This is where you select your tasty burger.</p>
 	<div id="selection" class="wrapper">
 	  <div v-for="item in food">
-	    <h2>{{item.name}}</h2>
+	    <h2><input type="checkbox" v-model="item.check">{{item.name}}</h2>
 	    <img v-bind:src="item.img" width="350">
 	    <ul>
 	      <li>{{item.kCal}} kCal</li>
@@ -43,23 +43,23 @@
 	<form>
 	<p>
 	  <label for="name">Full name</label><br>
-	  <input type="text" id="name" required="required" placeholder="First- and Last name" />
+	  <input type="text" id="name" required="required" placeholder="First- and Last name" v-model="formName" />
 	</p>
 	<p>
 	  <label for="email">E-mail</label><br>
-	  <input type="text" id="name" required="required" placeholder="E-mail address" />
+	  <input type="text" id="email" required="required" placeholder="E-mail address" v-model="formEmail" />
 	</p>
 	<p>
 	  <label for="street">Street</label><br>
-	  <input type="text" id="street" required="required" placeholder="Street name" />
+	  <input type="text" id="street" required="required" placeholder="Street name" v-model="formStreet" />
 	</p>
 	<p>
 	  <label for="house">House number</label><br>
-	  <input type="number" id="house" required="required" placeholder="House number" />
+	  <input type="number" id="house" required="required" placeholder="House number" v-model="formHouse" />
 	</p>
 	<p>
 	  <label for="payment">Payment options</label><br>
-	  <select id="payment" name="pay">
+	  <select id="payment" name="pay" v-model="formPayment">
 	    <option>Credit Card</option>
 	    <option>Paypal</option>
 	    <option selected="selected">Swish</option>
@@ -68,13 +68,14 @@
 	</p>
 	<p>
 	  <label>Gender</label><br>
-	  <input type="radio" name="gender" value="male"> Male<br>
-	  <input type="radio" name="gender" value="female"> Female<br>
-	  <input type="radio" name="gender" value="other" checked> Other<br>
+	  <input id="male" type="radio" name="gender" value="male" v-model="formGender"> Male<br>
+	  <input id="female" type="radio" name="gender" value="female" v-model="formGender"> Female<br>
+	  <input id="other" type="radio" name="gender" value="other" v-model="formGender" checked> Other<br>
 	</p>
 	</form>
       </section>
-      <button type="submit"><img src="https://www.festool.se/-/media/tts/festool/festool/bilder/wissen/festool-apps/order-app/hero_image_text_400x200px_orderapp_iconshopping.jpg" width="30" />Place order</button>
+      <button v-on:click="submitOrder()"  id="orderbutton" type="submit"><img src="https://www.festool.se/-/media/tts/festool/festool/bilder/wissen/festool-apps/order-app/hero_image_text_400x200px_orderapp_iconshopping.jpg" width="30" />Place order</button>
+      <p id="demo">{{order}}</p>
       <footer>
 	en Fot
       </footer>

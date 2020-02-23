@@ -1,30 +1,29 @@
 
-const vm = new Vue( {
-    el: '#selection',
+
+const vm1 = new Vue( {
+    el: '#main',
     data: {
 	food: food,
+	order: '',
+	formName: '',
+	formEmail: '',
+	formStreet: '',
+	formHouse: '',
+	formPayment: 'Swish',
+	formGender: 'other',
+    },
+    methods: {
+	submitOrder: function () {
+	    var burgers = [];
+	    for (item of food){
+		if (item.check) {
+		    burgers.push(item.name);
+		}
+	    }
+	    this.order = new Array(burgers, this.formName, this.formEmail, this.formStreet, this.formHouse, this.formPayment, this.formGender);
+	}
     }
-})
+} )
 
-/*
-<script src="https://vuejs.org/js/vue.js"></script>
-<div id="myID">
-  <h1>
-    Välj en burgare
-  </h1>
-  <ul>
-    <li v-for="item in menu">
-      {{item.info()}}
-      <p v-if="item.lactose">
-      Lactose
-      </p>
-      <p v-if="item.gluten">
-      Gluten
-      </p>
-      <p v-if="item.vegan">
-      Vegan
-      </p>
-    </li>
-  </ul>
-</div>
-*/
+
+

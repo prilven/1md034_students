@@ -1,54 +1,28 @@
-
 /*
-var myElement = document.getElementById('selection');
+let myButton = document.getElementById("orderbutton");
 
-for(let item of food){
+let orderSubmit = function () {
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let street = document.getElementById("street").value;
+    let house = document.getElementById("house").value;
+    let payment = document.getElementById("payment").value;
+    let gender;
+    
+    if (document.getElementById("male").checked) {
+	gender = document.getElementById("male").value;
+    }
+    if (document.getElementById("female").checked) {
+	gender = document.getElementById("female").value;
+    }
+    if (document.getElementById("other").checked) {
+	gender = document.getElementById("other").value;
+    }
+    
+    let order = new Array(name, email, street, house, payment, gender);
+    
+    console.log(order);
+};
 
-    let main = document.createElement('div');
-    
-    let heading = document.createElement('h2');
-    let headingValue = document.createTextNode(item.name);
-    heading.appendChild(headingValue);
-    
-    
-    let burgerImage = document.createElement('img')
-    burgerImage.src = item.image;
-    burgerImage.width = 350;
-    
-    
-    let list = document.createElement('ul');
-    let listItem = document.createElement('li');
-    let listValue = document.createTextNode(item.kCal + ' kCal');
-    listItem.appendChild(listValue);
-    list.appendChild(listItem);
-    
-    if(item.lactose){
-	listItem = document.createElement('li');
-	boldItem = document.createElement('b');
-	listValue = document.createTextNode('Lactose');
-	boldItem.appendChild(listValue);
-	listItem.appendChild(boldItem);
-	list.appendChild(listItem);
-    }
-    if(item.gluten){
-	listItem = document.createElement('li');
-	boldItem = document.createElement('b');
-	listValue = document.createTextNode('Gluten');
-	boldItem.appendChild(listValue);
-	listItem.appendChild(boldItem);
-	list.appendChild(listItem);
-    }
-    if(item.vegan){
-	listItem = document.createElement('li');
-	boldItem = document.createElement('b');
-	listValue = document.createTextNode('Vegan');
-	boldItem.appendChild(listValue);
-	listItem.appendChild(boldItem);
-	list.appendChild(listItem);
-    }
-    main.appendChild(heading);
-    main.appendChild(burgerImage);
-    main.appendChild(list);
-    myElement.appendChild(main);
-}
+myButton.addEventListener("click", orderSubmit);
 */
