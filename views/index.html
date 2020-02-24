@@ -4,6 +4,7 @@
   <head>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <script type="text/javascript" src="js/menu.js"></script>
+    <script src="/socket.io/socket.io.js" defer></script>
     <script src="js/js_script.js" defer></script>
     <script src="js/vue_script.js" defer></script>
     <script src="https://vuejs.org/js/vue.js"></script>
@@ -49,14 +50,15 @@
 	  <label for="email">E-mail</label><br>
 	  <input type="text" id="email" required="required" placeholder="E-mail address" v-model="formEmail" />
 	</p>
-	<p>
-	  <label for="street">Street</label><br>
-	  <input type="text" id="street" required="required" placeholder="Street name" v-model="formStreet" />
-	</p>
-	<p>
-	  <label for="house">House number</label><br>
-	  <input type="number" id="house" required="required" placeholder="House number" v-model="formHouse" />
-	</p>
+	<div class="view-box">
+	  <div id="dots" v-on:click="addOrder">
+            <div
+              v-for="(order, key) in orders"
+              v-bind:style="{ left: order.details.x + 'px', top: order.details.y + 'px'}">
+              {{key}} 
+            </div>
+	  </div>
+	</div>
 	<p>
 	  <label for="payment">Payment options</label><br>
 	  <select id="payment" name="pay" v-model="formPayment">
