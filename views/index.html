@@ -69,14 +69,25 @@
 	</p>
 	<p>
 	  <label>Gender</label><br>
-	  <input id="male" type="radio" name="gender" value="male" v-model="formGender"> Male<br>
-	  <input id="female" type="radio" name="gender" value="female" v-model="formGender"> Female<br>
-	  <input id="other" type="radio" name="gender" value="other" v-model="formGender" checked> Other<br>
+	  <input id="male" type="radio" name="gender" value="Male" v-model="formGender"> Male<br>
+	  <input id="female" type="radio" name="gender" value="Female" v-model="formGender"> Female<br>
+	  <input id="other" type="radio" name="gender" value="Other" v-model="formGender" checked> Other<br>
 	</p>
 	</form>
       </section>
       <button v-on:click="addOrder"  id="orderbutton" type="submit"><img src="https://www.festool.se/-/media/tts/festool/festool/bilder/wissen/festool-apps/order-app/hero_image_text_400x200px_orderapp_iconshopping.jpg" width="30" />Place order</button>
-      <p id="demo">{{order}}</p>
+      <div v-if="orderConfirmation">
+	<h2>Order Confirmation</h2>
+	<p>Name: {{formName}}</p>
+	<p>Email: {{formEmail}}</p>
+	<p>Deliver to: {{mapInfo.x}} x / {{mapInfo.y}} y
+	<p>Payment: {{formPayment}}</p>
+	<p>Gender: {{formGender}}</p>
+	<h3>Order summary</h3>
+	<ul>
+	  <li v-for="item in burgers">{{item}}</li>
+	</ul>
+      </div>
       <footer>
 	en Fot
       </footer>

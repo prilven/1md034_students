@@ -4,6 +4,7 @@ const socket = io();
 const vm = new Vue( {
     el: '#main',
     data: {
+	orderConfirmation: false,
 	orderCount: 0,
 	mapInfo: {},
 	orders: {},
@@ -13,7 +14,7 @@ const vm = new Vue( {
 	formName: '',
 	formEmail: '',
 	formPayment: 'Swish',
-	formGender: 'other',
+	formGender: 'Other',
     },
     methods: {
 	submitOrder: function () {
@@ -25,11 +26,12 @@ const vm = new Vue( {
 	    this.order = new Array(this.burgers, this.formName, this.formEmail, this.formPayment, this.formGender);
 	},
 	getNext: function() {
-	/*let lastOrder = Object.keys(this.orders).reduce(function(last, next) {
-	    return Math.max(last, next);
-	}, 0);
-	return lastOrder + 1;*/
-	    return this.orderCount + 1;
+	    let lastOrder = Object.keys(this.orders).reduce(function(last, next) {
+		return Math.max(last, next);
+	    }, 0);
+	    //return lastOrder + 1;
+	    this.orderCount = this.orderCount + 1;
+	    return this.orderCount;
 	},
 	addOrder: function(event) {
 	    let offset = {
@@ -43,11 +45,14 @@ const vm = new Vue( {
 		}
 	    }
 	    this.burgers = temp;
+	    this.order = new Array(this.formName, this.formEmail, this.formPayment, this.formGender);
+	    this.orderConfirmation = true;
 	    
 	    socket.emit('addOrder', {
 		orderId: this.getNext(),
 		details: this.mapInfo,
 		orderItems: this.burgers,
+		orderInfo: this.order,
 	    });
 	},
 	displayOrder: function(event) {
