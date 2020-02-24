@@ -51,11 +51,10 @@
 	  <input type="text" id="email" required="required" placeholder="E-mail address" v-model="formEmail" />
 	</p>
 	<div class="view-box">
-	  <div id="dots" v-on:click="addOrder">
+	  <div id="dots" v-on:click="displayOrder">
             <div
-              v-for="(order, key) in orders"
-              v-bind:style="{ left: order.details.x + 'px', top: order.details.y + 'px'}">
-              {{key}} 
+              v-bind:style="{ left: mapInfo.x + 'px', top: mapInfo.y + 'px'}">
+              T 
             </div>
 	  </div>
 	</div>
@@ -76,7 +75,7 @@
 	</p>
 	</form>
       </section>
-      <button v-on:click="submitOrder()"  id="orderbutton" type="submit"><img src="https://www.festool.se/-/media/tts/festool/festool/bilder/wissen/festool-apps/order-app/hero_image_text_400x200px_orderapp_iconshopping.jpg" width="30" />Place order</button>
+      <button v-on:click="addOrder"  id="orderbutton" type="submit"><img src="https://www.festool.se/-/media/tts/festool/festool/bilder/wissen/festool-apps/order-app/hero_image_text_400x200px_orderapp_iconshopping.jpg" width="30" />Place order</button>
       <p id="demo">{{order}}</p>
       <footer>
 	en Fot
